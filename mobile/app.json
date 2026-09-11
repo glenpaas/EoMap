@@ -1,0 +1,73 @@
+{
+  "expo": {
+    "name": "Külastusgraafik",
+    "slug": "kylastusgraafik",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "kylastusgraafik",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0B0D13",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kylastusgraafik.visits",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Külastusgraafik kasutab kaamerat riiulite enne/pärast fotode jäädvustamiseks poekülastuse ajal.",
+        "NSPhotoLibraryUsageDescription": "Külastusgraafik kasutab galeriid, et lisada külastusele varem tehtud fotosid.",
+        "NSLocationWhenInUseUsageDescription": "Külastusgraafik salvestab check-in ja check-out asukoha, et kinnitada poekülastuse toimumist.",
+        "NSAllowsArbitraryLoads": true
+      }
+    },
+    "android": {
+      "package": "com.kylastusgraafik.visits",
+      "adaptiveIcon": {
+        "backgroundColor": "#0B0D13",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ],
+      "usesCleartextTraffic": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0B0D13",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 76
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Külastusgraafik kasutab galeriid, et lisada külastusele varem tehtud fotosid.",
+          "cameraPermission": "Külastusgraafik kasutab kaamerat riiulite enne/pärast fotode jäädvustamiseks."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Külastusgraafik salvestab check-in ja check-out asukoha, et kinnitada poekülastuse toimumist."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "//": "In development the backend host is derived from the Expo dev server, so this stays empty. For a real build, set serverUrl to the backend's fixed address, e.g. https://kylastusgraafik.example.com",
+      "serverPort": 4000
+    }
+  }
+}
